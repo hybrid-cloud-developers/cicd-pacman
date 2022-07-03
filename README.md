@@ -1,35 +1,4 @@
-# Build a CI/CD Tekton Pipeline for deploying a Node.js application
-
-![IBM](./images/os-logo.jpg?raw=true "IBM")
-
-[Red Hat OpenShift on IBM Cloud]( https://www.ibm.com/cloud/openshift) is an extension of the IBM Cloud Kubernetes Service, where IBM manages an OpenShift Container Platform for you. 
-
-[Tekton Pipelines]( https://developer.ibm.com/videos/what-is-tekton/) is an open source framework used for creating cloud-native continuous integration and continuous delivery (CI/CD) pipelines that run on Kubernetes. Tekton Pipelines was built specifically for container environments, supports the software lifecycle, and uses a serverless approach.
-
-In this tutorial, you will become familiar with CI/CD pipelines and webhooks on Red Hat OpenShift 4.3 and Kubernetes 1.17 and higher using Tekton Pipelines.
-
-
-## Prerequisites
-
-Before you begin this tutorial, please complete the following steps:
-
-1. Register for an [IBM Cloud account](https://cloud.ibm.com/registration).
-2. Create a [free Kubernetes v1.17 cluster on IBM Cloud](https://cloud.ibm.com/docs/containers?topic=containers-getting-started#clusters_gs).
-3. Create an [OpenShift 4.3 cluster on IBM Cloud](https://cloud.ibm.com/docs/openshift?topic=openshift-openshift_tutorial).
-4. Install and configure the [IBM Cloud CLI](https://cloud.ibm.com/docs/cli?topic=cloud-cli-getting-started#overview).
-5. Configure the standard [IBM Cloud Container Registry](https://www.ibm.com/cloud/container-registry) by creating in Dallas region (`us.icr.io`) a namespace called: `tekton-pipeline`
-
-*Optional: Download [Visual Studio Code IDE](https://code.visualstudio.com) for editing the Node.js project.*
-
-*Optional: Download [tkn command line](https://github.com/tektoncd/cli) for easy command line interation with Tekton*
-
-Now that you’ve set up your environment, please note that IBM Cloud offers a free Kubernetes 1.17 cluster for one month for testing purposes. You will also receive a free IBM Cloud Image Registry with 512MB of storage and 5GB of pull traffic each month.
-
-
-
-## Estimated time 
-
-It should take you approximately 1 hour to provision the OpenShift / K8s cluster and to perform this tutorial.  
+# Build a CI/CD Tekton Pipeline for deploying a Pacman application
 
 ---
 
