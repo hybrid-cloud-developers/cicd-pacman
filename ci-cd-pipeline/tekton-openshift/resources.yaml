@@ -1,33 +1,33 @@
 apiVersion: tekton.dev/v1alpha1
 kind: PipelineResource
 metadata:
-  name: nodejs-git
+  name: pacman-git
 spec:
   type: git
   params:
     - name: revision
       value: master
     - name: url
-      value: https://github.com/vladsancira/nodejs-tekton.git
+      value: https://github.com/hybrid-cloud-developers/cicd-pacman.git
 ---
 
 apiVersion: tekton.dev/v1alpha1
 kind: PipelineResource
 metadata:
-  name: nodejs-image-dev
+  name: pacman-image-dev
 spec:
   type: image
   params:
     - name: url
-      value: image-registry.openshift-image-registry.svc:5000/env-dev/nodejs-tekton
+      value: image-registry.openshift-image-registry.svc:5000/env-dev/pacman-tekton
 ---
 
 apiVersion: tekton.dev/v1alpha1
 kind: PipelineResource
 metadata:
-  name: nodejs-image-stage
+  name: pacman-image-stage
 spec:
   type: image
   params:
     - name: url
-      value: image-registry.openshift-image-registry.svc:5000/env-stage/nodejs-tekton
+      value: image-registry.openshift-image-registry.svc:5000/env-stage/pacman-tekton

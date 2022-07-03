@@ -1,20 +1,20 @@
 apiVersion: tekton.dev/v1alpha1
 kind: Pipeline
 metadata:
-  name: nodejs-pipeline
+  name: pacman-pipeline
 spec:
   resources:
-    - name: nodejs-git
+    - name: pacman-git
       type: git
-    - name: nodejs-image-dev
+    - name: pacman-image-dev
       type: image
-    - name: nodejs-image-stage
+    - name: pacman-image-stage
       type: image
 
   params:
     - name: APP_NAME
       description: The name of the application
-      default: 'nodejs-tekton'      
+      default: 'pacman-tekton'
     - name: APP_VERSION
       description: The version of the application
       default: '1.0'      
@@ -31,18 +31,18 @@ spec:
   tasks:
   - name: build
     taskRef:
-      name: s2i-nodejs
+      name: s2i-pacman
     resources:       
       inputs:
         - name: source
-          resource: nodejs-git
+          resource: pacman-git
       outputs:
         - name: image
-          resource: nodejs-image-dev
+          resource: pacman-image-dev
 
   - name: deploy
     taskRef:
-      name: deploy-nodejs-app
+      name: deploy-pacman-app
     runAfter:
       - build
     params:
@@ -57,11 +57,11 @@ spec:
     resources:
       inputs:
         - name: image
-          resource: nodejs-image-dev
+          resource: pacman-image-dev
 
   - name: test
     taskRef:
-      name: test-nodejs-app
+      name: test-pacman-app
     runAfter:
       - deploy
     params:
@@ -74,7 +74,7 @@ spec:
 
   - name: promote
     taskRef:
-      name: promote-nodejs-app
+      name: promote-pacman-app
     runAfter:
       - test
     params:
@@ -91,7 +91,7 @@ spec:
     resources:
       inputs:
         - name: image
-          resource: nodejs-image-dev
+          resource: pacman-image-dev
       outputs:
         - name: image
-          resource: nodejs-image-stage
+          resource: pacman-image-stage

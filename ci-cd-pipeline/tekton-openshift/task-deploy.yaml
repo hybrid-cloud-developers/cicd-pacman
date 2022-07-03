@@ -1,7 +1,7 @@
 apiVersion: tekton.dev/v1alpha1
 kind: Task
 metadata:
-  name: deploy-nodejs-app
+  name: deploy-pacman-app
 spec:
   inputs:
     resources:
@@ -10,7 +10,7 @@ spec:
     params:
       - name: APP_NAME
         description: The name of the application
-        default: 'nodejs-tekton'
+        default: 'pacman-tekton'
         type: string
       - name: APP_VERSION
         description: The version of the application
@@ -58,7 +58,7 @@ spec:
         command: ["/bin/bash", "-c"]
         args:
           - |-
-            oc label deploy $(inputs.params.APP_NAME) app.kubernetes.io/name=nodejs --overwrite -n $(inputs.params.DEPLOY_PROJECT)
+            oc label deploy $(inputs.params.APP_NAME) app.kubernetes.io/name=pacman --overwrite -n $(inputs.params.DEPLOY_PROJECT)
             oc label deploy $(inputs.params.APP_NAME) app.version=$(inputs.params.APP_VERSION) --overwrite -n $(inputs.params.DEPLOY_PROJECT)
             oc set env deploy $(inputs.params.APP_NAME) app.version=$(inputs.params.APP_VERSION) -n $(inputs.params.DEPLOY_PROJECT)
             oc set env deploy $(inputs.params.APP_NAME) --from secret/$(inputs.params.AUTHORS_API_KEY) -n $(inputs.params.DEPLOY_PROJECT)

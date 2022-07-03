@@ -1,21 +1,21 @@
 apiVersion: tekton.dev/v1alpha1
 kind: PipelineRun
 metadata:
-  name: nodejs-pipeline-run
+  name: pacman-pipeline-run
 spec:
   serviceAccountName: pipeline
   pipelineRef:
-    name: nodejs-pipeline
+    name: pacman-pipeline
   resources:
-    - name: nodejs-git
+    - name: pacman-git
       resourceRef:
-        name: nodejs-git
+        name: pacman-git
     - name: nodejs-image-dev
       resourceRef:
-        name: nodejs-image-dev
-    - name: nodejs-image-stage
+        name: pacman-image-dev
+    - name: pacman-image-stage
       resourceRef:
-        name: nodejs-image-stage
+        name: pacman-image-stage
   params:
     - name: DEPLOY_ENVIRONMENT
       value: 'env-dev'

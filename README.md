@@ -323,6 +323,5 @@ kubectl get nodes -o wide
 
 ---
 
-# Summary 
-
-Congratulations! You have successfully created a cloud-native CI/CD Tekton Pipeline for building and deploying a Node.js application in an OpenShift/Kubernetes cluster. If you’d like to continue using Tekton and Red Hat OpenShift, try another tutorial where you can learn how to [Build a Tekton Pipeline to deploy a mobile app back end to OpenShift 4]( https://developer.ibm.com/components/tekton/tutorials/tekton-pipeline-deploy-a-mobile-app-backend-openshift-4).
+# Summary
+Congratulations!
