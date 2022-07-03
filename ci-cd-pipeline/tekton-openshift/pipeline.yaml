@@ -14,7 +14,7 @@ spec:
   params:
     - name: APP_NAME
       description: The name of the application
-      default: 'pacman-tekton'
+      default: 'nodejs-tekton'
     - name: APP_VERSION
       description: The version of the application
       default: '1.0'      
@@ -38,7 +38,7 @@ spec:
           resource: pacman-git
       outputs:
         - name: image
-          resource: pacman-image-dev
+          resource: nodejs-image-dev
 
   - name: deploy
     taskRef:
