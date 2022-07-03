@@ -10,7 +10,7 @@ spec:
     - name: pacman-git
       resourceRef:
         name: pacman-git
-    - name: nodejs-image-dev
+    - name: pacman-image-dev
       resourceRef:
         name: pacman-image-dev
     - name: pacman-image-stage
