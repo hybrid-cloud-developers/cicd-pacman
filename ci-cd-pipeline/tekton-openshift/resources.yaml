@@ -19,7 +19,7 @@ spec:
   type: image
   params:
     - name: url
-      value: image-registry.openshift-image-registry.svc:5000/env-dev/pacman-tekton
+      value: image-registry.openshift-image-registry.svc:5000/env-dev/nodejs-tekton
 ---
 
 apiVersion: tekton.dev/v1alpha1
@@ -30,4 +30,4 @@ spec:
   type: image
   params:
     - name: url
-      value: image-registry.openshift-image-registry.svc:5000/env-stage/pacman-tekton
+      value: image-registry.openshift-image-registry.svc:5000/env-stage/nodejs-tekton

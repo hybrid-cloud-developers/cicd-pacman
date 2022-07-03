@@ -64,8 +64,8 @@ oc new-project env-stage
 3. Create ImageStream `nodejs-tekton` for storing the NodeJ.js image in `env-dev` and `env-stage` projects:
 
 ```
-oc create is pacman-tekton -n env-dev
-oc create is pacman-tekton -n env-stage
+oc create is nodejs-tekton -n env-dev
+oc create is nodejs-tekton -n env-stage
 ``` 
 
 4. Allow the `pipeline` ServiceAccount to make deploys on other `env-dev` and `env-stage` projects:
